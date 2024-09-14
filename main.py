@@ -298,9 +298,9 @@ class SilderLabel(QLabel):
 
     def wheelEvent(self, ev: QWheelEvent | None) -> None:
         if ev.angleDelta().y() > 0:
-            self.action(True)
-        elif ev.angleDelta().y() < 0:
             self.action(False)
+        elif ev.angleDelta().y() < 0:
+            self.action(True)
         else:
             pass
 
@@ -309,7 +309,7 @@ class MyWidget(QWidget):
     def __init__(self, parent: QWidget | None = ...) -> None:
         super().__init__(parent)
         self.setAcceptDrops(True)
-        self.support = [".json", ".mp4"]
+        self.support = [".json", ".mp4",".mkv"]
         self.vlccontroller = VlcController(self.vlcevent)
         self.tempstart = -1
         self.tempend = -1
